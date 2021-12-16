@@ -1,0 +1,1 @@
+﻿INSERT INTO Inventorizacia (Invent_nomer,Tip,Nazvanie,Nomer_Kabineta) values ('10435','4',N'Шкаф','23')
