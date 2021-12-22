@@ -51,6 +51,7 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventorizaciaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.historyTableAdapter = new WindowsFormsAppBD.Database1DataSet2TableAdapters.HistoryTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -317,6 +317,16 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Тип";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 299);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Excel";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label7);
@@ -408,6 +418,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "История Изменения";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(409, 361);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Excel";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // toolStrip2
             // 
@@ -512,26 +532,6 @@
             // historyTableAdapter
             // 
             this.historyTableAdapter.ClearBeforeFill = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(409, 361);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Excel";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 299);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Excel";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
