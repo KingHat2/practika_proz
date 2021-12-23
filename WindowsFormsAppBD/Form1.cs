@@ -166,9 +166,7 @@ namespace WindowsFormsAppBD
                 
             command.Parameters.AddWithValue("Invent_nomer", textBox6.Text);
             command.Parameters.AddWithValue("Nomera_Kabenetov", textBox7.Text);
-            command.Parameters.AddWithValue("Data", $"{date.Month}/{date.Day}/{date.Year}");
-           
-
+            command.Parameters.AddWithValue("Data", $"{date.Month}/{date.Day}/{date.Year}");         
             command.ExecuteNonQuery();
         }
 
@@ -217,7 +215,6 @@ namespace WindowsFormsAppBD
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
                     dataGridView1[5, rowIndex] = linkCell;
                     editingRow.Cells["Delete"].Value = "Update";
-
                 }
             }
             catch (Exception ex)
@@ -235,7 +232,7 @@ namespace WindowsFormsAppBD
                     string task = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                     if (task == "Delete")
                     {
-                        if(MessageBox.Show("Удалить эту строку?","Удаление",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question)
+                        if(MessageBox.Show("Удалить эту строку?","Удаление",MessageBoxButtons.YesNo,MessageBoxIcon.Question)
                             ==DialogResult.Yes)
                         {
                             int rowIndex = e.RowIndex;
@@ -245,9 +242,9 @@ namespace WindowsFormsAppBD
                         }
                     }
                     else if(task == "Insert")
-                    {
+                    {                       
                         int rowIndex = dataGridView1.Rows.Count - 2;
-                        DataRow row = dataSet.Tables["Inventorizacia"].NewRow();
+                        DataRow row = dataSet.Tables["Inventorizacia"].NewRow();                    
                         row["Invent_nomer"] = dataGridView1.Rows[rowIndex].Cells["Invent_nomer"].Value;
                         row["Tip"] = dataGridView1.Rows[rowIndex].Cells["Tip"].Value;
                         row["Nazvanie"] = dataGridView1.Rows[rowIndex].Cells["Nazvanie"].Value;
@@ -261,8 +258,7 @@ namespace WindowsFormsAppBD
 
                     }
                     else if(task == "Update")
-                    {
-
+                    {                       
                         int r = e.RowIndex;
                         dataSet.Tables["Inventorizacia"].Rows[r]["Invent_nomer"] = dataGridView1.Rows[r].Cells["Invent_nomer"].Value;
                         dataSet.Tables["Inventorizacia"].Rows[r]["Tip"] = dataGridView1.Rows[r].Cells["Tip"].Value;
@@ -309,19 +305,23 @@ namespace WindowsFormsAppBD
                     string task = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
                     if (task == "Delete")
                     {
-                        if (MessageBox.Show("Удалить эту строку?", "Удаление", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+                        if (MessageBox.Show("Удалить эту строку?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                             == DialogResult.Yes)
                         {
                             int rowIndex = e.RowIndex;
                             dataGridView2.Rows.RemoveAt(rowIndex);
                             dataSet2.Tables["History"].Rows[rowIndex].Delete();
                             sqlDataAdapter2.Update(dataSet2, "History");
+
                         }
                     }
                     else if (task == "Insert")
                     {
+                        
                         int rowIndex = dataGridView2.Rows.Count - 2;
                         DataRow row = dataSet2.Tables["History"].NewRow();
+                        string z = dataGridView1.Rows[2].Cells[3].Value.ToString();
+
                         row["Invent_nomer"] = dataGridView2.Rows[rowIndex].Cells["Invent_nomer"].Value;                       
                         row["Nomera_Kabenetov"] = dataGridView2.Rows[rowIndex].Cells["Nomera_Kabenetov"].Value;
                         row["Data"] = dataGridView2.Rows[rowIndex].Cells["Data"].Value;
@@ -334,13 +334,38 @@ namespace WindowsFormsAppBD
                     }
 
                     else if (task == "Update")
-                    {
-                        int r = e.RowIndex;
+                    {                        
+                        int r = e.RowIndex;                  
                         dataSet2.Tables["History"].Rows[r]["Invent_nomer"] = dataGridView2.Rows[r].Cells["Invent_nomer"].Value;
                         dataSet2.Tables["History"].Rows[r]["Nomera_Kabenetov"] = dataGridView2.Rows[r].Cells["Nomera_Kabenetov"].Value;
                         dataSet2.Tables["History"].Rows[r]["Data"] = dataGridView2.Rows[r].Cells["Data"].Value;                                            
                         dataGridView2.Rows[e.RowIndex].Cells[4].Value = "Delete";
                         sqlDataAdapter2.Update(dataSet2, "History");
+
+                        //list box
+                        BindingSource BS = new BindingSource();
+                        DataTable DT = new DataTable();
+                        DT.Columns.Clear();
+                        DT.Columns.Add("field1_name");
+                        DT.Columns.Add("field2_name");
+                        BS.DataSource = DT;
+                        dataGridView2.AutoGenerateColumns = false;
+                        dataGridView2.DataSource = BS;
+
+                       
+
+                        // Добавляем выпадающий список
+                        DataGridViewComboBoxColumn col2 = new DataGridViewComboBoxColumn();
+                        col2.Items.AddRange("Значение1", "Значение2");
+                        col2.DataPropertyName = "field2_name";
+                        col2.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                        col2.FlatStyle = FlatStyle.Flat;
+                        dataGridView2.Columns.Add(col2);
+
+                      
+
+
+
                     }
                     ReloadData2();
                 }
@@ -416,7 +441,7 @@ namespace WindowsFormsAppBD
             int j, i;
             for (i = 0; i <= dataGridView1.RowCount - 2; i++)
             {
-                for (j = 0; j< dataGridView1.ColumnCount - 1; j++)
+                for (j = 0; j < dataGridView1.ColumnCount - 1; j++)
                 {
                     wsh.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
                 }
@@ -424,6 +449,8 @@ namespace WindowsFormsAppBD
             }
             exApp.Visible = true;
         }
+
+        
     }
 
         
