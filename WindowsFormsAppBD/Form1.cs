@@ -24,7 +24,7 @@ namespace WindowsFormsAppBD
         private SqlDataAdapter sqlDataAdapter2= null;
         private DataSet dataSet2 = null;
         private bool neRowAdding = false;
-      
+        private SqlCommandBuilder sqlBuilder2 = null;
         public Form1()
         {
             InitializeComponent();
@@ -60,10 +60,10 @@ namespace WindowsFormsAppBD
             try
             {
                 sqlDataAdapter2 = new SqlDataAdapter("SELECT *,  'Delete' AS[Delete] FROM History ", sqlConnection);
-                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter2);
-                sqlBuilder.GetInsertCommand();
-                sqlBuilder.GetUpdateCommand();
-                sqlBuilder.GetDeleteCommand();
+                sqlBuilder2 = new SqlCommandBuilder(sqlDataAdapter2);
+                sqlBuilder2.GetInsertCommand();
+                sqlBuilder2.GetUpdateCommand();
+                sqlBuilder2.GetDeleteCommand();
                 dataSet2 = new DataSet();
                 sqlDataAdapter2.Fill(dataSet2, "History");
                 dataGridView2.DataSource = dataSet2.Tables["History"];
@@ -123,6 +123,7 @@ namespace WindowsFormsAppBD
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet2.History". При необходимости она может быть перемещена или удалена.
             this.historyTableAdapter.Fill(this.database1DataSet2.History);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.Inventorizacia". При необходимости она может быть перемещена или удалена.
@@ -155,15 +156,14 @@ namespace WindowsFormsAppBD
             Close();
         }
 
-        
+
 
         private void button4_Click(object sender, EventArgs e)
         {
             DateTime date = DateTime.Parse(textBox8.Text);
             SqlCommand command = new SqlCommand(
                 "INSERT INTO [History] (Invent_nomer,Nomera_Kabenetov,Data) values(@Invent_nomer,@Nomera_Kabenetov,@Data)",
-                sqlConnection);
-                
+                sqlConnection);                
             command.Parameters.AddWithValue("Invent_nomer", textBox6.Text);
             command.Parameters.AddWithValue("Nomera_Kabenetov", textBox7.Text);
             command.Parameters.AddWithValue("Data", $"{date.Month}/{date.Day}/{date.Year}");         
@@ -264,7 +264,9 @@ namespace WindowsFormsAppBD
                         dataSet.Tables["Inventorizacia"].Rows[r]["Tip"] = dataGridView1.Rows[r].Cells["Tip"].Value;
                         dataSet.Tables["Inventorizacia"].Rows[r]["Nazvanie"] = dataGridView1.Rows[r].Cells["Nazvanie"].Value;
                         dataSet.Tables["Inventorizacia"].Rows[r]["Nomer_Kabineta"] = dataGridView1.Rows[r].Cells["Nomer_Kabineta"].Value;
-                        dataGridView1.Rows[e.RowIndex].Cells[5].Value = "Delete";
+                        dataGridView1.Rows[e.RowIndex].Cells[5].Value = "Delete";                      
+                        this.Validate();
+                        this.dataGridView1.EndEdit();
                         sqlDataAdapter.Update(dataSet, "Inventorizacia");
                     }
                     ReloadData();                       
@@ -340,29 +342,31 @@ namespace WindowsFormsAppBD
                         dataSet2.Tables["History"].Rows[r]["Nomera_Kabenetov"] = dataGridView2.Rows[r].Cells["Nomera_Kabenetov"].Value;
                         dataSet2.Tables["History"].Rows[r]["Data"] = dataGridView2.Rows[r].Cells["Data"].Value;                                            
                         dataGridView2.Rows[e.RowIndex].Cells[4].Value = "Delete";
-                        sqlDataAdapter2.Update(dataSet2, "History");
-
-                        //list box
-                        BindingSource BS = new BindingSource();
-                        DataTable DT = new DataTable();
-                        DT.Columns.Clear();
-                        DT.Columns.Add("field1_name");
-                        DT.Columns.Add("field2_name");
-                        BS.DataSource = DT;
-                        dataGridView2.AutoGenerateColumns = false;
-                        dataGridView2.DataSource = BS;
-
                        
 
-                        // Добавляем выпадающий список
-                        DataGridViewComboBoxColumn col2 = new DataGridViewComboBoxColumn();
-                        col2.Items.AddRange("Значение1", "Значение2");
-                        col2.DataPropertyName = "field2_name";
-                        col2.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
-                        col2.FlatStyle = FlatStyle.Flat;
-                        dataGridView2.Columns.Add(col2);
+                        //list box
+                        // BindingSource BS = new BindingSource();
+                        // DataTable DT = new DataTable();
+                        // DT.Columns.Clear();
+                        // DT.Columns.Add("field1_name");
+                        // DT.Columns.Add("field2_name");
+                        // BS.DataSource = DT;
+                        // dataGridView2.AutoGenerateColumns = false;
+                        //dataGridView2.DataSource = BS;
 
-                      
+
+
+                        // Добавляем выпадающий список
+                        // DataGridViewComboBoxColumn col2 = new DataGridViewComboBoxColumn();
+                        // col2.Items.AddRange("Значение1", "Значение2");
+                        // col2.DataPropertyName = "field2_name";
+                        // col2.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                        // col2.FlatStyle = FlatStyle.Flat;
+                        //  dataGridView2.Columns.Add(col2);
+                        this.Validate();
+                        this.dataGridView2.EndEdit();
+                        sqlDataAdapter2.Update(dataSet2, "History");
+
 
 
 
@@ -450,11 +454,41 @@ namespace WindowsFormsAppBD
             exApp.Visible = true;
         }
 
-        
+        private void dataGridView2_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Colum_KeyPress);
+            if (dataGridView2.CurrentCell.ColumnIndex == 1)
+            {
+                TextBox textBox = e.Control as TextBox;
+                if(textBox !=null)
+                {
+                    textBox.KeyPress += new KeyPressEventHandler(Colum_KeyPress);
+
+                }
+            }       
+        }
+        private void Colum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)&& !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Colum_KeyPress);
+            if (dataGridView1.CurrentCell.ColumnIndex == 1)
+            {
+                TextBox textBox = e.Control as TextBox;
+                if (textBox != null)
+                {
+                    textBox.KeyPress += new KeyPressEventHandler(Colum_KeyPress);
+
+                }
+            }
+        }
     }
 
-        
-    
-
-    
 }
