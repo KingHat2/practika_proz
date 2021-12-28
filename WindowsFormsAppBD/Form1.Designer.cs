@@ -48,9 +48,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -291,14 +291,6 @@
             this.textBox11.TabIndex = 5;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(717, 299);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(66, 20);
-            this.textBox12.TabIndex = 6;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -317,6 +309,14 @@
             this.label10.Size = new System.Drawing.Size(66, 49);
             this.label10.TabIndex = 7;
             this.label10.Text = "Тип";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(717, 299);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(66, 20);
+            this.textBox12.TabIndex = 6;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // button5
             // 

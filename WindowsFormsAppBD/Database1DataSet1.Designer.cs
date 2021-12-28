@@ -803,12 +803,15 @@ namespace WindowsFormsAppBD {
                 base.Columns.Add(this.columnNomer_Kabineta);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this._column_}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnInvent_nomer}, false));
                 this._column_.AutoIncrement = true;
                 this._column_.AutoIncrementSeed = -1;
                 this._column_.AutoIncrementStep = -1;
                 this._column_.AllowDBNull = false;
                 this._column_.ReadOnly = true;
                 this._column_.Unique = true;
+                this.columnInvent_nomer.Unique = true;
                 this.columnInvent_nomer.MaxLength = 10;
                 this.columnTip.MaxLength = 50;
                 this.columnNazvanie.MaxLength = 50;

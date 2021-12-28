@@ -145,57 +145,57 @@ SELECT [№], Invent_nomer, Tip, Nazvanie, Nomer_Kabineta FROM Inventorizacia WH
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Database1DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Database1DataSet1" msprop:Generator_DataSetName="Database1DataSet1">
+  <xs:element name="Database1DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Database1DataSet1" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database1DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="History" msprop:Generator_RowEvHandlerName="HistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoryRowDeleted" msprop:Generator_RowDeletingName="HistoryRowDeleting" msprop:Generator_RowEvArgName="HistoryRowChangeEvent" msprop:Generator_TablePropName="History" msprop:Generator_RowChangedName="HistoryRowChanged" msprop:Generator_RowChangingName="HistoryRowChanging" msprop:Generator_TableClassName="HistoryDataTable" msprop:Generator_RowClassName="HistoryRow" msprop:Generator_TableVarName="tableHistory" msprop:Generator_UserTableName="History">
+        <xs:element name="History" msprop:Generator_RowEvHandlerName="HistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoryRowDeleted" msprop:Generator_RowDeletingName="HistoryRowDeleting" msprop:Generator_RowEvArgName="HistoryRowChangeEvent" msprop:Generator_TablePropName="History" msprop:Generator_RowChangedName="HistoryRowChanged" msprop:Generator_UserTableName="History" msprop:Generator_RowChangingName="HistoryRowChanging" msprop:Generator_RowClassName="HistoryRow" msprop:Generator_TableClassName="HistoryDataTable" msprop:Generator_TableVarName="tableHistory">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="_x2116_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="__" msprop:Generator_ColumnPropNameInTable="__Column" msprop:Generator_ColumnVarNameInTable="_column_" msprop:Generator_UserColumnName="№" type="xs:int" />
-              <xs:element name="Invent_nomer" msprop:Generator_ColumnPropNameInRow="Invent_nomer" msprop:Generator_ColumnPropNameInTable="Invent_nomerColumn" msprop:Generator_ColumnVarNameInTable="columnInvent_nomer" msprop:Generator_UserColumnName="Invent_nomer" minOccurs="0">
+              <xs:element name="_x2116_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="__Column" msprop:Generator_ColumnPropNameInRow="__" msprop:Generator_UserColumnName="№" msprop:Generator_ColumnVarNameInTable="_column_" type="xs:int" />
+              <xs:element name="Invent_nomer" msprop:Generator_ColumnPropNameInTable="Invent_nomerColumn" msprop:Generator_ColumnPropNameInRow="Invent_nomer" msprop:Generator_UserColumnName="Invent_nomer" msprop:Generator_ColumnVarNameInTable="columnInvent_nomer" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nomera_Kabenetov" msprop:Generator_ColumnPropNameInRow="Nomera_Kabenetov" msprop:Generator_ColumnPropNameInTable="Nomera_KabenetovColumn" msprop:Generator_ColumnVarNameInTable="columnNomera_Kabenetov" msprop:Generator_UserColumnName="Nomera_Kabenetov" minOccurs="0">
+              <xs:element name="Nomera_Kabenetov" msprop:Generator_ColumnPropNameInTable="Nomera_KabenetovColumn" msprop:Generator_ColumnPropNameInRow="Nomera_Kabenetov" msprop:Generator_UserColumnName="Nomera_Kabenetov" msprop:Generator_ColumnVarNameInTable="columnNomera_Kabenetov" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Data" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_UserColumnName="Data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_UserColumnName="Data" msprop:Generator_ColumnVarNameInTable="columnData" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Inventorizacia" msprop:Generator_RowEvHandlerName="InventorizaciaRowChangeEventHandler" msprop:Generator_RowDeletedName="InventorizaciaRowDeleted" msprop:Generator_RowDeletingName="InventorizaciaRowDeleting" msprop:Generator_RowEvArgName="InventorizaciaRowChangeEvent" msprop:Generator_TablePropName="Inventorizacia" msprop:Generator_RowChangedName="InventorizaciaRowChanged" msprop:Generator_RowChangingName="InventorizaciaRowChanging" msprop:Generator_TableClassName="InventorizaciaDataTable" msprop:Generator_RowClassName="InventorizaciaRow" msprop:Generator_TableVarName="tableInventorizacia" msprop:Generator_UserTableName="Inventorizacia">
+        <xs:element name="Inventorizacia" msprop:Generator_RowEvHandlerName="InventorizaciaRowChangeEventHandler" msprop:Generator_RowDeletedName="InventorizaciaRowDeleted" msprop:Generator_RowDeletingName="InventorizaciaRowDeleting" msprop:Generator_RowEvArgName="InventorizaciaRowChangeEvent" msprop:Generator_TablePropName="Inventorizacia" msprop:Generator_RowChangedName="InventorizaciaRowChanged" msprop:Generator_UserTableName="Inventorizacia" msprop:Generator_RowChangingName="InventorizaciaRowChanging" msprop:Generator_RowClassName="InventorizaciaRow" msprop:Generator_TableClassName="InventorizaciaDataTable" msprop:Generator_TableVarName="tableInventorizacia">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="_x2116_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="__" msprop:Generator_ColumnPropNameInTable="__Column" msprop:Generator_ColumnVarNameInTable="_column_" msprop:Generator_UserColumnName="№" type="xs:int" />
-              <xs:element name="Invent_nomer" msprop:Generator_ColumnPropNameInRow="Invent_nomer" msprop:Generator_ColumnPropNameInTable="Invent_nomerColumn" msprop:Generator_ColumnVarNameInTable="columnInvent_nomer" msprop:Generator_UserColumnName="Invent_nomer" minOccurs="0">
+              <xs:element name="_x2116_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="__Column" msprop:Generator_ColumnPropNameInRow="__" msprop:Generator_UserColumnName="№" msprop:Generator_ColumnVarNameInTable="_column_" type="xs:int" />
+              <xs:element name="Invent_nomer" msprop:Generator_ColumnPropNameInTable="Invent_nomerColumn" msprop:Generator_ColumnPropNameInRow="Invent_nomer" msprop:Generator_UserColumnName="Invent_nomer" msprop:Generator_ColumnVarNameInTable="columnInvent_nomer" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tip" msprop:Generator_ColumnPropNameInRow="Tip" msprop:Generator_ColumnPropNameInTable="TipColumn" msprop:Generator_ColumnVarNameInTable="columnTip" msprop:Generator_UserColumnName="Tip" minOccurs="0">
+              <xs:element name="Tip" msprop:Generator_ColumnPropNameInTable="TipColumn" msprop:Generator_ColumnPropNameInRow="Tip" msprop:Generator_UserColumnName="Tip" msprop:Generator_ColumnVarNameInTable="columnTip" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nazvanie" msprop:Generator_ColumnPropNameInRow="Nazvanie" msprop:Generator_ColumnPropNameInTable="NazvanieColumn" msprop:Generator_ColumnVarNameInTable="columnNazvanie" msprop:Generator_UserColumnName="Nazvanie" minOccurs="0">
+              <xs:element name="Nazvanie" msprop:Generator_ColumnPropNameInTable="NazvanieColumn" msprop:Generator_ColumnPropNameInRow="Nazvanie" msprop:Generator_UserColumnName="Nazvanie" msprop:Generator_ColumnVarNameInTable="columnNazvanie" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nomer_Kabineta" msprop:Generator_ColumnPropNameInRow="Nomer_Kabineta" msprop:Generator_ColumnPropNameInTable="Nomer_KabinetaColumn" msprop:Generator_ColumnVarNameInTable="columnNomer_Kabineta" msprop:Generator_UserColumnName="Nomer_Kabineta" minOccurs="0">
+              <xs:element name="Nomer_Kabineta" msprop:Generator_ColumnPropNameInTable="Nomer_KabinetaColumn" msprop:Generator_ColumnPropNameInRow="Nomer_Kabineta" msprop:Generator_UserColumnName="Nomer_Kabineta" msprop:Generator_ColumnVarNameInTable="columnNomer_Kabineta" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -214,6 +214,10 @@ SELECT [№], Invent_nomer, Tip, Nazvanie, Nomer_Kabineta FROM Inventorizacia WH
     <xs:unique name="Inventorizacia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Inventorizacia" />
       <xs:field xpath="mstns:_x2116_" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Inventorizacia" />
+      <xs:field xpath="mstns:Invent_nomer" />
     </xs:unique>
   </xs:element>
 </xs:schema>
