@@ -620,14 +620,15 @@ namespace WindowsFormsAppBD
             }       
         }
 
-       // private void Colum_KeyPress(object sender, KeyPressEventArgs e)
-       // {
-         //   if (!char.IsControl(e.KeyChar)&& !char.IsDigit(e.KeyChar))
-         //   {
-         //       e.Handled = true;
-         //   }
+        //Ограничение на ввод букв в поля для цифр
+        private void Colum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)&& !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
 
-      //  }
+        }
 
         //Ограничение на ввод букв в поля для цифр
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
