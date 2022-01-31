@@ -232,10 +232,10 @@
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox11, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label10, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox12, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
