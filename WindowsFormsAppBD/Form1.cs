@@ -655,7 +655,6 @@ SELECT fio AS 'ФИО', phone AS 'Телефон' FROM usersTable Order by fio;/
 // доступ высшее начальство
 // доступ отдел по вопросам депортации
 GetListUsers("SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
-Dell.dell = "deportiruuchi";
 dataGridView1.Columns[0].FillWeight = 9;
 dataGridView1.Columns[1].FillWeight = 9;
 dataGridView1.Columns[2].FillWeight = 10;
