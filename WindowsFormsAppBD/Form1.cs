@@ -652,19 +652,5 @@ SELECT fio AS 'ФИО', phone AS 'Телефон' FROM usersTable Order by fio;/
 
 
 
-// доступ высшее начальство
-// доступ отдел по вопросам депортации
-GetListUsers("SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
-dataGridView1.Columns[0].FillWeight = 9;
-dataGridView1.Columns[1].FillWeight = 9;
-dataGridView1.Columns[2].FillWeight = 10;
-dataGridView1.Columns[3].FillWeight = 14;
-dataGridView1.Columns[4].FillWeight = 13;
-dataGridView1.Columns[5].FillWeight = 15;
-dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi"
 }
