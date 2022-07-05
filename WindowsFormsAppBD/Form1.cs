@@ -647,5 +647,6 @@ namespace WindowsFormsAppBD
 
         
     }
-
+SELEC * FROM table ORDER BY fio;//выбрать всё из таблицы 
+SELECT fio AS 'ФИО', phone AS 'Телефон' FROM usersTable Order by fio;//переименование строк
 }
