@@ -654,3 +654,10 @@ SELECT fio AS 'ФИО', phone AS 'Телефон' FROM usersTable Order by fio;/
 
 SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi"
 }
+public class Connect
+    {
+        private const string host = "chuc.caseum.ru";
+        private const string port = "33333";
+        private const string database = "is_2_19_st21_KURS";
+        private const string username = "st_2_19_21";
+        private const string password = "70964010";
